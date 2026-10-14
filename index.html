@@ -76,11 +76,10 @@
             font-size: 1.05rem;
         }
 
-        /* Voice Toggle Control */
         .voice-control {
             background: rgba(15, 23, 42, 0.8);
-            border: 1px solid var(--teal-accent);
-            color: var(--teal-accent);
+            border: 1px solid var(--text-muted);
+            color: var(--text-muted);
             padding: 0.6rem 1.2rem;
             border-radius: 30px;
             cursor: pointer;
@@ -92,13 +91,12 @@
             transition: all 0.3s ease;
         }
 
-        .voice-control:hover {
-            background: var(--teal-accent);
-            color: #0f172a;
-            box-shadow: 0 0 15px rgba(45, 212, 191, 0.3);
+        .voice-control.active {
+            border-color: var(--teal-accent);
+            color: var(--teal-accent);
+            box-shadow: 0 0 15px rgba(45, 212, 191, 0.2);
         }
 
-        /* Hero Manifesto */
         .hero-manifesto {
             background: linear-gradient(145deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 100%);
             border: 1px solid var(--sunny-gold);
@@ -124,7 +122,6 @@
             line-height: 1.6;
         }
 
-        /* Pillar Grid */
         .pillar-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -142,9 +139,9 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            cursor: pointer;
         }
 
-        /* Search Section */
         .search-box {
             margin-bottom: 2rem;
         }
@@ -167,7 +164,6 @@
             box-shadow: 0 0 15px rgba(251, 191, 36, 0.15);
         }
 
-        /* Collapsible Accordion Grid */
         .section-grid {
             display: flex;
             flex-direction: column;
@@ -286,24 +282,24 @@
             <p class="subtitle">Precision Alignment, Food & Energy Sovereignty, Universal Inclusion</p>
         </div>
         <button class="voice-control" onclick="toggleVoiceNarration()" id="voiceBtn">
-            🔊 Voice Guidance: ON
+            🔇 Voice Guidance: OFF
         </button>
     </header>
 
     <!-- Executive Manifesto & Pillars -->
-    <section class="hero-manifesto" onmouseenter="speakText('Closed Loop Bio Solar Thermal Engine Manifesto. Engineered for zero mortality livestock rearing, 24/7 baseload microgrids, township and rural development, youth and women empowerment, and universal disability accessibility.')">
-        <h2>⚡ Closed-Loop Bio-Solar-Thermal Engine: Zero-Mortality & Empowerment Manifesto</h2>
+    <section class="hero-manifesto" onclick="speakText('Closed Loop Bio Solar Thermal Engine Manifesto. Engineered for zero mortality livestock rearing, 24/7 baseload microgrid power, and full universal accessibility.')">
+        <h2>⚡ Closed-Loop Bio-Solar-Thermal Engine: Zero-Mortality Manifesto</h2>
         <p>
             Engineered for absolute socio-technical sovereignty. Integrating high-efficiency biological conversion with solar thermal dynamics, our system guarantees <strong style="color: var(--teal-accent);">zero-mortality livestock rearing</strong>, autonomous 24/7 baseload microgrid power, and full universal accessibility for persons with disabilities, women, and youth across rural and township development sectors.
         </p>
 
         <div class="pillar-grid">
-            <div class="pillar-card">♿ Disability Accessibility</div>
-            <div class="pillar-card">👩‍💼 Women & Youth Power</div>
-            <div class="pillar-card">🏡 Township & Rural Dev</div>
-            <div class="pillar-card">⚡ 24/7 Baseload Microgrid</div>
-            <div class="pillar-card">🌱 Food Sovereignty</div>
-            <div class="pillar-card">☀️ Energy Sovereignty</div>
+            <div class="pillar-card" onclick="event.stopPropagation(); speakText('Disability Accessibility Matrix')">♿ Disability Accessibility</div>
+            <div class="pillar-card" onclick="event.stopPropagation(); speakText('Women and Youth Empowerment')">👩‍💼 Women & Youth Power</div>
+            <div class="pillar-card" onclick="event.stopPropagation(); speakText('Township and Rural Development')">🏡 Township & Rural Dev</div>
+            <div class="pillar-card" onclick="event.stopPropagation(); speakText('Twenty Four Seven Baseload Microgrid')">⚡ 24/7 Baseload Microgrid</div>
+            <div class="pillar-card" onclick="event.stopPropagation(); speakText('Food Sovereignty Protocols')">🌱 Food Sovereignty</div>
+            <div class="pillar-card" onclick="event.stopPropagation(); speakText('Energy Sovereignty Systems')">☀️ Energy Sovereignty</div>
         </div>
     </section>
 
@@ -317,66 +313,66 @@
 
         <!-- Module 1: JET-Alignment-Framework -->
         <div class="accordion-card file-group">
-            <div class="accordion-header" onclick="toggleAccordion(this)" onmouseenter="speakText('Module 1: JET Alignment Framework. 5 Master Documents.')">
+            <div class="accordion-header" onclick="toggleAccordion(this, 'Module 1: JET Alignment Framework. 5 Master Documents.')">
                 <h3>📁 JET-Alignment-Framework <span class="badge-count">5 Documents</span></h3>
                 <span class="toggle-icon">▼</span>
             </div>
             <div class="accordion-body">
                 <ul class="file-list">
-                    <li><a href="JET-Alignment-Framework/bio-solar-engine-blueprint.html" target="_blank" onmouseenter="speakText('Bio Solar Engine Blueprint')">Bio-Solar Engine Blueprint</a></li>
-                    <li><a href="JET-Alignment-Framework/intake-runbook-master-manual.html" target="_blank" onmouseenter="speakText('Intake Runbook Master Manual')">Intake Runbook Master Manual</a></li>
-                    <li><a href="JET-Alignment-Framework/JET-Africa-Funding-Platform.html" target="_blank" onmouseenter="speakText('JET Africa Funding Platform')">JET Africa Funding Platform</a></li>
-                    <li><a href="JET-Alignment-Framework/JET-mvp-sandbox-proposal.html" target="_blank" onmouseenter="speakText('JET MVP Sandbox Proposal')">JET MVP Sandbox Proposal</a></li>
-                    <li><a href="JET-Alignment-Framework/JET-submission-governance-protocol.html" target="_blank" onmouseenter="speakText('JET Submission Governance Protocol')">JET Submission Governance Protocol</a></li>
+                    <li><a href="JET-Alignment-Framework/bio-solar-engine-blueprint.html" target="_blank" onclick="speakText('Opening Bio Solar Engine Blueprint')">Bio-Solar Engine Blueprint</a></li>
+                    <li><a href="JET-Alignment-Framework/intake-runbook-master-manual.html" target="_blank" onclick="speakText('Opening Intake Runbook Master Manual')">Intake Runbook Master Manual</a></li>
+                    <li><a href="JET-Alignment-Framework/JET-Africa-Funding-Platform.html" target="_blank" onclick="speakText('Opening JET Africa Funding Platform')">JET Africa Funding Platform</a></li>
+                    <li><a href="JET-Alignment-Framework/JET-mvp-sandbox-proposal.html" target="_blank" onclick="speakText('Opening JET MVP Sandbox Proposal')">JET MVP Sandbox Proposal</a></li>
+                    <li><a href="JET-Alignment-Framework/JET-submission-governance-protocol.html" target="_blank" onclick="speakText('Opening JET Submission Governance Protocol')">JET Submission Governance Protocol</a></li>
                 </ul>
             </div>
         </div>
 
         <!-- Module 2: SCADA-Telemetry-Simulation -->
         <div class="accordion-card file-group">
-            <div class="accordion-header" onclick="toggleAccordion(this)" onmouseenter="speakText('Module 2: SCADA Telemetry Simulation. 15 Master Matrices and Controllers.')">
+            <div class="accordion-header" onclick="toggleAccordion(this, 'Module 2: SCADA Telemetry Simulation. 15 Master Matrices.')">
                 <h3>📁 SCADA-Telemetry-Simulation <span class="badge-count">15 Documents</span></h3>
                 <span class="toggle-icon">▼</span>
             </div>
             <div class="accordion-body">
                 <ul class="file-list">
-                    <li><a href="SCADA-Telemetry-Simulation/4pod-broiler-management-matrix.html" target="_blank" onmouseenter="speakText('4 Pod Broiler Management Matrix')">4Pod Broiler Management Matrix</a></li>
-                    <li><a href="SCADA-Telemetry-Simulation/4pod-swine-management-matrix.html" target="_blank" onmouseenter="speakText('4 Pod Swine Management Matrix')">4Pod Swine Management Matrix</a></li>
-                    <li><a href="SCADA-Telemetry-Simulation/bio-digester-energy-yield.html" target="_blank" onmouseenter="speakText('Bio Digester Energy Yield')">Bio Digester Energy Yield</a></li>
-                    <li><a href="SCADA-Telemetry-Simulation/bio-engine-specification-matrix.html" target="_blank" onmouseenter="speakText('Bio Engine Specification Matrix')">Bio Engine Specification Matrix</a></li>
-                    <li><a href="SCADA-Telemetry-Simulation/broiler-dwarf-wall-autocover.html" target="_blank" onmouseenter="speakText('Broiler Dwarf Wall Autocover')">Broiler Dwarf Wall Autocover</a></li>
-                    <li><a href="SCADA-Telemetry-Simulation/broiler-microclimate-controller.html" target="_blank" onmouseenter="speakText('Broiler Microclimate Controller')">Broiler Microclimate Controller</a></li>
-                    <li><a href="SCADA-Telemetry-Simulation/fail-safe-control-master-logic.html" target="_blank" onmouseenter="speakText('Fail Safe Control Master Logic')">Fail Safe Control Master Logic</a></li>
-                    <li><a href="SCADA-Telemetry-Simulation/feedstock-dilution-viscosity-matrix.html" target="_blank" onmouseenter="speakText('Feedstock Dilution Viscosity Matrix')">Feedstock Dilution Viscosity Matrix</a></li>
-                    <li><a href="SCADA-Telemetry-Simulation/feed-water-bioenergy-matrix.html" target="_blank" onmouseenter="speakText('Feed Water Bioenergy Matrix')">Feed Water Bioenergy Matrix</a></li>
-                    <li><a href="SCADA-Telemetry-Simulation/hydroponics_nursery_co2-intaker.html" target="_blank" onmouseenter="speakText('Hydroponics Nursery CO2 Intaker')">Hydroponics Nursery CO2 Intaker</a></li>
-                    <li><a href="SCADA-Telemetry-Simulation/integrated-thermal-climate-scada.html" target="_blank" onmouseenter="speakText('Integrated Thermal Climate SCADA')">Integrated Thermal Climate SCADA</a></li>
-                    <li><a href="SCADA-Telemetry-Simulation/itemised-master-boq.html" target="_blank" onmouseenter="speakText('Itemised Master BOQ')">Itemised Master BOQ</a></li>
-                    <li><a href="SCADA-Telemetry-Simulation/livestock-revenue-modeler.html" target="_blank" onmouseenter="speakText('Livestock Revenue Modeler')">Livestock Revenue Modeler</a></li>
-                    <li><a href="SCADA-Telemetry-Simulation/swine-environmental-simulator.html" target="_blank" onmouseenter="speakText('Swine Environmental Simulator')">Swine Environmental Simulator</a></li>
-                    <li><a href="SCADA-Telemetry-Simulation/swine-microclimate-controller.html" target="_blank" onmouseenter="speakText('Swine Microclimate Controller')">Swine Microclimate Controller</a></li>
+                    <li><a href="SCADA-Telemetry-Simulation/4pod-broiler-management-matrix.html" target="_blank" onclick="speakText('Opening 4 Pod Broiler Management Matrix')">4Pod Broiler Management Matrix</a></li>
+                    <li><a href="SCADA-Telemetry-Simulation/4pod-swine-management-matrix.html" target="_blank" onclick="speakText('Opening 4 Pod Swine Management Matrix')">4Pod Swine Management Matrix</a></li>
+                    <li><a href="SCADA-Telemetry-Simulation/bio-digester-energy-yield.html" target="_blank" onclick="speakText('Opening Bio Digester Energy Yield')">Bio Digester Energy Yield</a></li>
+                    <li><a href="SCADA-Telemetry-Simulation/bio-engine-specification-matrix.html" target="_blank" onclick="speakText('Opening Bio Engine Specification Matrix')">Bio Engine Specification Matrix</a></li>
+                    <li><a href="SCADA-Telemetry-Simulation/broiler-dwarf-wall-autocover.html" target="_blank" onclick="speakText('Opening Broiler Dwarf Wall Autocover')">Broiler Dwarf Wall Autocover</a></li>
+                    <li><a href="SCADA-Telemetry-Simulation/broiler-microclimate-controller.html" target="_blank" onclick="speakText('Opening Broiler Microclimate Controller')">Broiler Microclimate Controller</a></li>
+                    <li><a href="SCADA-Telemetry-Simulation/fail-safe-control-master-logic.html" target="_blank" onclick="speakText('Opening Fail Safe Control Master Logic')">Fail Safe Control Master Logic</a></li>
+                    <li><a href="SCADA-Telemetry-Simulation/feedstock-dilution-viscosity-matrix.html" target="_blank" onclick="speakText('Opening Feedstock Dilution Viscosity Matrix')">Feedstock Dilution Viscosity Matrix</a></li>
+                    <li><a href="SCADA-Telemetry-Simulation/feed-water-bioenergy-matrix.html" target="_blank" onclick="speakText('Opening Feed Water Bioenergy Matrix')">Feed Water Bioenergy Matrix</a></li>
+                    <li><a href="SCADA-Telemetry-Simulation/hydroponics_nursery_co2-intaker.html" target="_blank" onclick="speakText('Opening Hydroponics Nursery CO2 Intaker')">Hydroponics Nursery CO2 Intaker</a></li>
+                    <li><a href="SCADA-Telemetry-Simulation/integrated-thermal-climate-scada.html" target="_blank" onclick="speakText('Opening Integrated Thermal Climate SCADA')">Integrated Thermal Climate SCADA</a></li>
+                    <li><a href="SCADA-Telemetry-Simulation/itemised-master-boq.html" target="_blank" onclick="speakText('Opening Itemised Master BOQ')">Itemised Master BOQ</a></li>
+                    <li><a href="SCADA-Telemetry-Simulation/livestock-revenue-modeler.html" target="_blank" onclick="speakText('Opening Livestock Revenue Modeler')">Livestock Revenue Modeler</a></li>
+                    <li><a href="SCADA-Telemetry-Simulation/swine-environmental-simulator.html" target="_blank" onclick="speakText('Opening Swine Environmental Simulator')">Swine Environmental Simulator</a></li>
+                    <li><a href="SCADA-Telemetry-Simulation/swine-microclimate-controller.html" target="_blank" onclick="speakText('Opening Swine Microclimate Controller')">Swine Microclimate Controller</a></li>
                 </ul>
             </div>
         </div>
 
         <!-- Module 3: TVET-Niche-Training-Proposal -->
         <div class="accordion-card file-group">
-            <div class="accordion-header" onclick="toggleAccordion(this)" onmouseenter="speakText('Module 3: TVET Niche Training Proposal. 10 Training Modules and Roadmaps.')">
+            <div class="accordion-header" onclick="toggleAccordion(this, 'Module 3: TVET Niche Training Proposal. 10 Training Modules.')">
                 <h3>📁 TVET-Niche-Training-Proposal <span class="badge-count">10 Documents</span></h3>
                 <span class="toggle-icon">▼</span>
             </div>
             <div class="accordion-body">
                 <ul class="file-list">
-                    <li><a href="TVET-Niche-Training-Proposal/accessibility-inclusion-seta-training.html" target="_blank" onmouseenter="speakText('Accessibility Inclusion SETA Training')">Accessibility Inclusion SETA Training</a></li>
-                    <li><a href="TVET-Niche-Training-Proposal/accessibility-interactive-modules.html" target="_blank" onmouseenter="speakText('Accessibility Interactive Modules')">Accessibility Interactive Modules</a></li>
-                    <li><a href="TVET-Niche-Training-Proposal/MOD-Z2-01_ Zero-Waste Bio-Conversion.html" target="_blank" onmouseenter="speakText('Module Z2 01 Zero Waste Bio Conversion')">MOD-Z2-01: Zero-Waste Bio-Conversion</a></li>
-                    <li><a href="TVET-Niche-Training-Proposal/MOD-Z2-02_ Advanced Biogas Digester.html" target="_blank" onmouseenter="speakText('Module Z2 02 Advanced Biogas Digester')">MOD-Z2-02: Advanced Biogas Digester</a></li>
-                    <li><a href="TVET-Niche-Training-Proposal/MOD-Z2-03_ Hydronic Reclamation & M.html" target="_blank" onmouseenter="speakText('Module Z2 03 Hydronic Reclamation and Management')">MOD-Z2-03: Hydronic Reclamation & Management</a></li>
-                    <li><a href="TVET-Niche-Training-Proposal/MOD-Z2-04_ Advanced Process Automat.html" target="_blank" onmouseenter="speakText('Module Z2 04 Advanced Process Automation')">MOD-Z2-04: Advanced Process Automation</a></li>
-                    <li><a href="TVET-Niche-Training-Proposal/MOD-Z2-05_ Technical Risk Assessment.html" target="_blank" onmouseenter="speakText('Module Z2 05 Technical Risk Assessment')">MOD-Z2-05: Technical Risk Assessment</a></li>
-                    <li><a href="TVET-Niche-Training-Proposal/MOD-Z2-06_ Integrated Systems Enginee.html" target="_blank" onmouseenter="speakText('Module Z2 06 Integrated Systems Engineering')">MOD-Z2-06: Integrated Systems Engineering</a></li>
-                    <li><a href="TVET-Niche-Training-Proposal/MOD-Z2-07_ Financial Modeling, Capital.html" target="_blank" onmouseenter="speakText('Module Z2 07 Financial Modeling and Capital')">MOD-Z2-07: Financial Modeling, Capital</a></li>
-                    <li><a href="TVET-Niche-Training-Proposal/seta-training-roadmap.html" target="_blank" onmouseenter="speakText('SETA Training Roadmap')">SETA Training Roadmap</a></li>
+                    <li><a href="TVET-Niche-Training-Proposal/accessibility-inclusion-seta-training.html" target="_blank" onclick="speakText('Opening Accessibility Inclusion SETA Training')">Accessibility Inclusion SETA Training</a></li>
+                    <li><a href="TVET-Niche-Training-Proposal/accessibility-interactive-modules.html" target="_blank" onclick="speakText('Opening Accessibility Interactive Modules')">Accessibility Interactive Modules</a></li>
+                    <li><a href="TVET-Niche-Training-Proposal/MOD-Z2-01_ Zero-Waste Bio-Conversion.html" target="_blank" onclick="speakText('Opening Module Z2 01 Zero Waste Bio Conversion')">MOD-Z2-01: Zero-Waste Bio-Conversion</a></li>
+                    <li><a href="TVET-Niche-Training-Proposal/MOD-Z2-02_ Advanced Biogas Digester.html" target="_blank" onclick="speakText('Opening Module Z2 02 Advanced Biogas Digester')">MOD-Z2-02: Advanced Biogas Digester</a></li>
+                    <li><a href="TVET-Niche-Training-Proposal/MOD-Z2-03_ Hydronic Reclamation & M.html" target="_blank" onclick="speakText('Opening Module Z2 03 Hydronic Reclamation and Management')">MOD-Z2-03: Hydronic Reclamation & Management</a></li>
+                    <li><a href="TVET-Niche-Training-Proposal/MOD-Z2-04_ Advanced Process Automat.html" target="_blank" onclick="speakText('Opening Module Z2 04 Advanced Process Automation')">MOD-Z2-04: Advanced Process Automation</a></li>
+                    <li><a href="TVET-Niche-Training-Proposal/MOD-Z2-05_ Technical Risk Assessment.html" target="_blank" onclick="speakText('Opening Module Z2 05 Technical Risk Assessment')">MOD-Z2-05: Technical Risk Assessment</a></li>
+                    <li><a href="TVET-Niche-Training-Proposal/MOD-Z2-06_ Integrated Systems Enginee.html" target="_blank" onclick="speakText('Opening Module Z2 06 Integrated Systems Engineering')">MOD-Z2-06: Integrated Systems Engineering</a></li>
+                    <li><a href="TVET-Niche-Training-Proposal/MOD-Z2-07_ Financial Modeling, Capital.html" target="_blank" onclick="speakText('Opening Module Z2 07 Financial Modeling and Capital')">MOD-Z2-07: Financial Modeling, Capital</a></li>
+                    <li><a href="TVET-Niche-Training-Proposal/seta-training-roadmap.html" target="_blank" onclick="speakText('Opening SETA Training Roadmap')">SETA Training Roadmap</a></li>
                 </ul>
             </div>
         </div>
@@ -389,40 +385,42 @@
 </div>
 
 <script>
-    let voiceEnabled = true;
+    let voiceEnabled = false;
 
     function toggleVoiceNarration() {
         voiceEnabled = !voiceEnabled;
         const btn = document.getElementById('voiceBtn');
         if (voiceEnabled) {
             btn.innerHTML = '🔊 Voice Guidance: ON';
-            btn.style.borderColor = 'var(--teal-accent)';
-            speakText('Voice guidance enabled.');
+            btn.classList.add('active');
+            speakText('Voice guidance activated.');
         } else {
             btn.innerHTML = '🔇 Voice Guidance: OFF';
-            btn.style.borderColor = 'var(--text-muted)';
-            window.speechSynthesis.cancel();
+            btn.classList.remove('active');
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            }
         }
     }
 
     function speakText(text) {
         if (!voiceEnabled || !('speechSynthesis' in window)) return;
-        window.speechSynthesis.cancel(); // Stop current speech
+        window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.rate = 1.0;
         utterance.pitch = 1.0;
         window.speechSynthesis.speak(utterance);
     }
 
-    function toggleAccordion(header) {
+    function toggleAccordion(header, textToSpeak) {
         const card = header.parentElement;
         const isExpanded = card.classList.contains('active');
         
-        // Close all cards for sleek accordion behavior
         document.querySelectorAll('.accordion-card').forEach(c => c.classList.remove('active'));
 
         if (!isExpanded) {
             card.classList.add('active');
+            if (textToSpeak) speakText(textToSpeak);
         }
     }
 
@@ -448,7 +446,7 @@
             if (hasMatch || input === "") {
                 card.style.display = "";
                 if (input !== "") {
-                    card.classList.add('active'); // Expand during search
+                    card.classList.add('active');
                 }
             } else {
                 card.style.display = "none";
